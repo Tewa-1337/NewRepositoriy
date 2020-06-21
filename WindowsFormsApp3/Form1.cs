@@ -20,11 +20,10 @@ namespace WindowsFormsApp3
         }
         private void Button1_Click(object sender, EventArgs e)//кнопка генерации случайного массива
         {
-            dataGridView1.ColumnCount = 27;
-            Random rand = new Random();
-            for (int i = 0; i < array.Length; i++)
+            dataGridView1.ColumnCount = 27;//кол-во строк в списке массивов
+            Random rand = new Random();//создание случайного массива 
+            for (int i = 0; i < array.Length; i++)//Начало цикла
             {
-                array[i] = rand.Next(-100, 100);
                 array[i] = rand.Next(-200, 200);
                 dataGridView1.Rows[0].Cells[i].Value = array[i];
             }
@@ -47,7 +46,7 @@ namespace WindowsFormsApp3
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)// Составление диаграммы
         {
             int[] x = array;
             int[] y = new int[27];
@@ -78,11 +77,11 @@ namespace WindowsFormsApp3
         private void Button5_Click(object sender, EventArgs e)//Выполнение задания
         {
             double sr_ar = 0;
-            int sum = 0;
-            int count = 0;
+            int sum = 0;//переменная обозначенная за сумму
+            int count = 0;//переменная обозначенная за кол-во отрицательных элементов массива
             Random rand = new Random();
             int[] array = new int[27];
-            for (int i = 0; i < 27; i++)
+            for (int i = 0; i < 27; i++)//начало цикла
             {
                 array[i] = rand.Next(-200, 200);
    
@@ -94,11 +93,11 @@ namespace WindowsFormsApp3
                 }
 
             }
-            sr_ar = sum / count;
+            sr_ar = sum / count;//вычисление среднего арифметического из отрицательных элементов
             label1.Text = "Среднее арифметическое отрицательных элементов массива : " + sr_ar.ToString();
         }
 
-        private void Button6_Click(object sender, EventArgs e)//Переход
+        private void Button6_Click(object sender, EventArgs e)//Переход на 2 форму
         {
             Form1.ActiveForm.Hide();
             Form2 frm2 = new Form2();
@@ -110,7 +109,7 @@ namespace WindowsFormsApp3
            
         }
 
-        private void Button7_Click(object sender, EventArgs e)
+        private void Button7_Click(object sender, EventArgs e)//переход на 3 форму
         {
             Form1.ActiveForm.Hide();
             Form3 frm3 = new Form3();
